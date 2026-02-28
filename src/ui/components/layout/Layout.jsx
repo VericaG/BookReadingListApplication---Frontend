@@ -27,10 +27,6 @@ const Layout = ({ children }) => {
                     </Typography>
 
                     <Box>
-                        <Button color="inherit" onClick={() => navigate("/home")}>
-                            Home
-                        </Button>
-
                         <Button
                             variant="contained"
                             color="secondary"
@@ -44,9 +40,15 @@ const Layout = ({ children }) => {
                             + Add Book
                         </Button>
 
+                        <Button color="inherit" onClick={() => navigate("/home")}>
+                            Home
+                        </Button>
+
+
                         <Button color="inherit" onClick={logout}>
                             Logout
                         </Button>
+
                     </Box>
                 </Toolbar>
             </AppBar>

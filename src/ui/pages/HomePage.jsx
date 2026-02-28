@@ -1,126 +1,3 @@
-// import React from "react";
-// import {
-//     Grid,
-//     Card,
-//     CardContent,
-//     Typography,
-//     Button,
-//     CardActions,
-//     Chip,
-//     Box,
-// } from "@mui/material";
-// import { useNavigate } from "react-router-dom";
-// import useBooks from "../../hooks/useBooks.js";
-//
-// const HomePage = () => {
-//     const { books, loading, onDelete, onStart, onFinish } = useBooks();
-//     const navigate = useNavigate();
-//
-//     if (loading) return <p>Loading...</p>;
-//
-//     const getStatusColor = (status) => {
-//         if (status === "READING") return "warning";
-//         if (status === "FINISHED") return "success";
-//         return "default";
-//     };
-//
-//     return (
-//         <Box sx={{ p: 5, minHeight: "100vh" }}>
-//             <Typography variant="h4" gutterBottom>
-//                 My Book Collection
-//             </Typography>
-//
-//             <Grid container spacing={3}>
-//                 {books?.length > 0 ? (
-//                     books.map((book) => (
-//                         <Grid item xs={12} sm={6} md={4} key={book.id}>
-//                             <Card
-//                                 sx={{
-//                                     transition: "0.3s",
-//                                     boxShadow: 3,
-//                                     "&:hover": { boxShadow: 8, transform: "translateY(-4px)" },
-//                                 }}
-//                             >
-//                                 <CardContent>
-//                                     <Typography variant="h6">
-//                                         {book.title}
-//                                     </Typography>
-//
-//                                     <Typography color="text.secondary">
-//                                         {book.author}
-//                                     </Typography>
-//
-//                                     <Typography sx={{ mt: 1 }}>
-//                                         Genre: {book.genre}
-//                                     </Typography>
-//
-//                                     <Box sx={{ mt: 2 }}>
-//                                         <Chip
-//                                             label={book.status}
-//                                             color={getStatusColor(book.status)}
-//                                         />
-//                                     </Box>
-//                                 </CardContent>
-//
-//                                 <CardActions
-//                                     sx={{
-//                                         display: "flex",
-//                                         justifyContent: "space-between",
-//                                         px: 2,
-//                                     }}
-//                                 >
-//                                     <Button
-//                                         size="small"
-//                                         onClick={() => navigate(`/books/${book.id}`)}
-//                                     >
-//                                         Details
-//                                     </Button>
-//
-//                                     <Box>
-//                                         <Button
-//                                             size="small"
-//                                             variant="outlined"
-//                                             color="warning"
-//                                             sx={{ mr: 1 }}
-//                                             onClick={() => onStart(book.id)}
-//                                         >
-//                                             Reading
-//                                         </Button>
-//
-//                                         <Button
-//                                             size="small"
-//                                             variant="contained"
-//                                             color="success"
-//                                             onClick={() => onFinish(book.id)}
-//                                         >
-//                                             Finished
-//                                         </Button>
-//                                     </Box>
-//                                 </CardActions>
-//
-//                                 <Box sx={{ px: 2, pb: 2 }}>
-//                                     <Button
-//                                         fullWidth
-//                                         variant="text"
-//                                         color="error"
-//                                         onClick={() => onDelete(book.id)}
-//                                     >
-//                                         Delete
-//                                     </Button>
-//                                 </Box>
-//                             </Card>
-//                         </Grid>
-//                     ))
-//                 ) : (
-//                     <Typography>No books added yet.</Typography>
-//                 )}
-//             </Grid>
-//         </Box>
-//     );
-// };
-//
-// export default HomePage;
-
 import React from "react";
 import {
     Grid,
@@ -152,15 +29,14 @@ const HomePage = () => {
             sx={{
                 p: 5,
                 minHeight: "100vh",
-                background:
-                    "linear-gradient(135deg, #1e2019 0%, #7d8491 20%, #a6192e 40%, #e0d68a 65%, #f9cb40 85%, #f0f7f4 100%)",
+
             }}
         >
             <Typography
                 variant="h4"
                 gutterBottom
                 align="center"
-                sx={{ fontWeight: 600, color: "#FFFFFF" }}
+                sx={{ fontWeight: 600, color: "#A6192E" }}
             >
                 📚 My Book collection
             </Typography>
@@ -173,7 +49,7 @@ const HomePage = () => {
                     "&:hover": { backgroundColor: "#e6b930" }, }}
                 onClick={() => navigate("/add")}
             >
-                ➕ Add Book
+                + Add Book
             </Button>
 
             <Grid container spacing={3}>
@@ -189,10 +65,9 @@ const HomePage = () => {
                                     color: "#505253",
                                     transition: "0.3s",
                                     "&:hover": {
-                                    transform: "translateY(-6px)",
-                                    boxShadow: "0 12px 40px rgba(0,0,0,0.5)",
-                                },
-
+                                        transform: "translateY(-6px)",
+                                        boxShadow: "0 12px 40px rgba(0,0,0,0.5)",
+                                    },
                                 }}
                             >
                                 <CardContent>
@@ -211,6 +86,7 @@ const HomePage = () => {
                                     </Box>
                                 </CardContent>
 
+                                {/* Навигациски копчиња */}
                                 <CardActions
                                     sx={{
                                         display: "flex",
@@ -221,42 +97,56 @@ const HomePage = () => {
                                     <Button
                                         size="small"
                                         onClick={() => navigate(`/books/${book.id}`)}
+                                        sx={{ color: "#1976d2" }}
                                     >
                                         Details
                                     </Button>
-
-                                    <Box>
-                                        <Button
-                                            size="small"
-                                            variant="outlined"
-                                            color="warning"
-                                            sx={{ mr: 1 }}
-                                            onClick={() => onStart(book.id)}
-                                        >
-                                            In progress
-                                        </Button>
-                                        <Button
-                                            size="small"
-                                            variant="contained"
-                                            color="success"
-                                            onClick={() => onFinish(book.id)}
-                                        >
-                                            Finish
-                                        </Button>
-                                    </Box>
-                                </CardActions>
-
-                                <Box sx={{ px: 2, pb: 2 }}>
                                     <Button
-                                        fullWidth
-                                        variant="text"
+                                        size="small"
                                         color="error"
                                         onClick={() => onDelete(book.id)}
                                     >
                                         Delete
                                     </Button>
+                                </CardActions>
+
+                                {/* Divider за визуелна поделба */}
+                                <Box sx={{ px: 2 }}>
+                                    <hr style={{ border: "0.5px solid rgba(0,0,0,0.1)" }} />
+                                </Box>
+
+                                {/* Статус копчиња */}
+                                <Box
+                                    sx={{
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        gap: 2,
+                                        px: 2,
+                                        pb: 2,
+                                    }}
+                                >
+                                    <Button
+                                        size="small"
+                                        variant="outlined"
+                                        color="warning"
+                                        onClick={() => onStart(book.id)}
+                                    >
+                                        In Progress
+                                    </Button>
+                                    <Button
+                                        size="small"
+                                        variant="contained"
+                                        color="success"
+                                        onClick={() => onFinish(book.id)}
+                                    >
+                                        Finish
+                                    </Button>
                                 </Box>
                             </Card>
+
+
+
+
                         </Grid>
                     ))
                 ) : (

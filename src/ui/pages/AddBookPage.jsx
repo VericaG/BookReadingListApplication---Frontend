@@ -40,12 +40,11 @@ const AddBookPage = () => {
         <Box
             sx={{
                 minHeight: "100vh",
+                width: "100%",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                background:
-                    "linear-gradient(135deg, #1e2019 0%, #7d8491 20%, #a6192e 40%, #e0d68a 65%, #f9cb40 85%, #f0f7f4 100%)",
-            }}
+           }}
         >
             <Paper
                 elevation={0}
@@ -61,7 +60,7 @@ const AddBookPage = () => {
                 }}
             >
                 <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: 600, color: "#F9CB40" }}>
-                    ➕ Add new Book to your List
+                    + Add new Book to your List
                 </Typography>
 
 
