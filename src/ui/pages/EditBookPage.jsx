@@ -45,7 +45,7 @@ const EditBookPage = () => {
 
     const handleSubmit = () => {
         onEdit(book.id, formData);
-        navigate("/home"); // 🔹 враќање на HomePage
+        navigate("/home");
     };
 
     if (!book) {

@@ -11,8 +11,8 @@ const useBooks = () => {
         booksRepository.findAll()
             .then((response) => {
                 console.log("Books response:", response.data);
-                setBooks(response.data); // директно листа
-                setTotalElements(response.data.length); // број на книги
+                setBooks(response.data);
+                setTotalElements(response.data.length);
                 setLoading(false);
             })
             .catch((error) => {
