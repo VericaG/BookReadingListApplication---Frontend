@@ -31,9 +31,14 @@ const useBooks = () => {
 
     const onEdit = useCallback((id, data) => {
         booksRepository.update(id, data)
-            .then(() => fetchBooks())
+            .then((res) => {
+                setBooks((prev) =>
+                    prev.map((b) => (b.id === id ? res.data : b))
+                );
+            })
             .catch((error) => console.log(error));
-    }, [fetchBooks]);
+    }, []);
+
 
     const onDelete = useCallback((id) => {
         booksRepository.deleteById(id)

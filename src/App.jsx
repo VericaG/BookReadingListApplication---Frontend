@@ -16,6 +16,7 @@ import HomePage from "./ui/pages/HomePage.jsx";
 import AddBookPage from "./ui/pages/AddBookPage.jsx";
 import BookDetailsPage from "./ui/pages/BookDetailsPage.jsx";
 import Layout from "./ui/components/layout/Layout.jsx";
+import EditBookPage from "./ui/pages/EditBookPage.jsx";
 
 const LoadingScreen = () => (
     <Box
@@ -72,6 +73,7 @@ const App = () => (
                 <Route element={<ProtectedRoute />}>
                     <Route path="/home" element={<HomePage />} />
                     <Route path="/add" element={<AddBookPage />} />
+                    <Route path="/books/edit/:id" element={<EditBookPage />} />
                     <Route path="/books/:id" element={<BookDetailsPage />} />
                 </Route>
 

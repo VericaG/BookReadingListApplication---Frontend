@@ -86,7 +86,6 @@ const HomePage = () => {
                                     </Box>
                                 </CardContent>
 
-                                {/* Навигациски копчиња */}
                                 <CardActions
                                     sx={{
                                         display: "flex",
@@ -101,6 +100,15 @@ const HomePage = () => {
                                     >
                                         Details
                                     </Button>
+
+                                    <Button
+                                        size="small"
+                                        onClick={() => navigate(`/books/edit/${book.id}`)}
+                                        sx={{ color: "#f8d00d" }}
+                                    >
+                                        Edit
+                                    </Button>
+
                                     <Button
                                         size="small"
                                         color="error"
@@ -110,12 +118,10 @@ const HomePage = () => {
                                     </Button>
                                 </CardActions>
 
-                                {/* Divider за визуелна поделба */}
                                 <Box sx={{ px: 2 }}>
                                     <hr style={{ border: "0.5px solid rgba(0,0,0,0.1)" }} />
                                 </Box>
 
-                                {/* Статус копчиња */}
                                 <Box
                                     sx={{
                                         display: "flex",
@@ -143,8 +149,6 @@ const HomePage = () => {
                                     </Button>
                                 </Box>
                             </Card>
-
-
 
 
                         </Grid>
